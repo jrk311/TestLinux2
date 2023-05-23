@@ -9,7 +9,7 @@ jobs:
       - name: clone actions   
         uses: actions/checkout@v3
       - name: Pull DVC
-        run: docker run --rm --name dvccont -v "/home/mindlabs/img_yolov7/SHR/actions-runner/actions-runner/_work/TestLinux2/TestLinux2/data/:/dataset/" image_dvc bash -c "cd /dataset/ && git init && dvc init && dvc remote add -d minio s3://dataset -f && dvc remote modify minio endpointurl http://10.8.0.30:9000/ && dvc remote modify minio access_key_id QMSGHUZUGYCNHSCBKORY && dvc remote modify minio secret_access_key enxpe6cVDQpaLusq1wxDLBd5C71bVf+R2XVvTkXO && dvc pull"
+        run: docker run --rm --name dvccont -v "/home/mindlabs/img_yolov7/SHR/actions-runner/actions-runner/_work/TestLinux2/TestLinux2/data/:/dataset/" image_dvc bash -c "cd /dataset/ && git init && dvc init -f && dvc remote add -d minio s3://dataset -f && dvc remote modify minio endpointurl http://10.8.0.30:9000/ && dvc remote modify minio access_key_id QMSGHUZUGYCNHSCBKORY && dvc remote modify minio secret_access_key enxpe6cVDQpaLusq1wxDLBd5C71bVf+R2XVvTkXO && dvc pull"
       - name: list dir
         run: ls
       - name: Run YOLOv7 inside Docker container
