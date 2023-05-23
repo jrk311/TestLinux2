@@ -13,4 +13,4 @@ jobs:
       - name: list dir
         run: ls
       - name: Run YOLOv7 inside Docker container
-        run: docker run --rm --gpus all --name yolocont -v "/home/mindlabs/img_yolov7/SHR/actions-runner/actions-runner/_work/TestLinux2/TestLinux2/data/:/dataset/" -v "/home/mindlabs/img_yolov7/SHR/Resultados/:/yolov7/runs" --shm-size=512m image_yolov7 python train.py --device 0 --workers 4 --batch-size 16 --epochs 1 --img 640 640 --data /dataset/custom_data.yaml --hyp /dataset/hyp.scratch.custom.yaml --cfg /dataset/cfg-yolov7-custom.yaml --weights yolov7.pt --name yolov7
+        run: docker run --rm --gpus all --name yolocont -v "/home/mindlabs/img_yolov7/SHR/actions-runner/_work/TestLinux2/TestLinux2/data/:/dataset/" -v "/home/mindlabs/img_yolov7/SHR/Resultados/:/yolov7/runs" --shm-size=512m image_yolov7 python train.py --device 0 --workers 4 --batch-size 16 --epochs 1 --img 640 640 --data /dataset/custom_data.yaml --hyp /dataset/hyp.scratch.custom.yaml --cfg /dataset/cfg-yolov7-custom.yaml --weights yolov7.pt --name yolov7
