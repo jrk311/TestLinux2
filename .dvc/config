@@ -2,6 +2,6 @@
     remote = minio
 ['remote "minio"']
     url = s3://dataset
-    endpointurl = http://10.8.0.30:9000/
+    endpointurl = http://localhost:9000/
     access_key_id = QMSGHUZUGYCNHSCBKORY
     secret_access_key = enxpe6cVDQpaLusq1wxDLBd5C71bVf+R2XVvTkXO
